@@ -5,13 +5,14 @@ const wss = new WebSocketServer({ port: 8080 });
 const connectedSockets = [];
 
 
-wss.on('connection', function connection(ws) {
+wss.on('connection', function connection(ws, req) {
   //ws is the socket of the client
+  console.log(`${req}`);
   console.log(`connection from ${ws._socket.remoteAddress}`);
   connectedSockets.push(ws);
   console.log(`clients:  ${connectedSockets}`);
   ws.on('message', 
-    
+
     function message(message) {
       if (message === "quit"){
         console.lo(`client at ${ws._socket.remoteAddress} has quit`);
