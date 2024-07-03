@@ -3,11 +3,11 @@ import { WebSocketServer } from 'ws';
 const wss = new WebSocketServer({ port: 8080 });
 
 wss.on('connection', function connection(ws) {
-  ws.send('you have connected!');
+  wss.send('you have connected!');
 }); 
 
-ws.on('message', function message(data) {
+wss.on('message', function message(data) {
   //reflect data
   console.log('received: %s', data);
-  ws.send(data);
+  wss.send(data);
 });
