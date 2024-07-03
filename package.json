@@ -1,0 +1,14 @@
+{
+  "name": "asd-children-platform-backendnode",
+  "version": "1.0.0",
+  "description": "backend in node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ws": "^8.17.1"
+  }
+}
