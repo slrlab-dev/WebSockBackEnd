@@ -6,6 +6,7 @@ const ws = new WebSocket('wss://cors-anywhere-pnd9.onrender.com');
 
 ws.on('message', (message) => {
   console.log(`Received message from server: ${message}`);
+  getAndSend();
 });
 
 ws.on('close', () => {
@@ -14,7 +15,6 @@ ws.on('close', () => {
 
 ws.on('open', () => {
   console.log("CLIENT: you have connected!");
-  getAndSend();
 });
 
 function getAndSend(){
